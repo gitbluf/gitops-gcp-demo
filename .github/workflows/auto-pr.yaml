@@ -18,5 +18,4 @@ jobs:
         destination_branch: "main"
         pr_title: "Pulling ${{ github.ref }} into main"
         pr_body: "👑 *An automated PR*"
-        pr_reviewer: "gitbluf"
         github_token: ${{ secrets.AUTO_PR_TOKEN }}

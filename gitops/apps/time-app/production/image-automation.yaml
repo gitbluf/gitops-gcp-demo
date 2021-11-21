@@ -7,7 +7,6 @@ metadata:
 spec:
   image: mpetrovic992/time-app
   interval: 1m
-
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
@@ -20,7 +19,6 @@ spec:
   policy:
     semver:
       range: 1.x.x
-
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
@@ -28,8 +26,9 @@ metadata:
   name: time-app
   namespace: flux-system
 spec:
-  sourceRef: GitRepository
-     name: flux-system
+  sourceRef: 
+    kind: GitRepository
+    name: flux-system
   update:
     strategy: Setters
     path: ./gitops/apps/time-app/production

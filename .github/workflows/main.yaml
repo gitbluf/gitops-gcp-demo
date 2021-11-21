@@ -1,0 +1,38 @@
+name: "Main Workflow"
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FLUX_SSH_KEY: ${{ secrets.FLUX_SSH_KEY }}
+
+jobs:
+  deploy_cluster:
+     name: "Deploy and bootstrap cluster"
+     runs-on: ubuntu-20.04
+     defaults:
+       run:
+         working-directory: terraform
+
+     steps:
+     - name: Checkout
+       uses: actions/checkout@v2
+
+     # Fail early
+     - name: Test terraform code format
+       run: terraform fmt -check -recursive
+
+     - name: Install Flux SSH key
+       uses: shimataro/ssh-key-action@v2
+       with:
+         key: ${{ secrets.SSH_KEY }}
+         name: id_rsa
+         if_key_exists: replace
+
+     - name: Set up Cloud SDK
+       uses: google-github-actions/setup-gcloud@master
+       with:
+         project_id: ${{ secrets.GCP_PROJECT_ID }}
+         service_account_key: ${{ secrets.GCP_JSON_KEY }}
+         export_default_credentials: true

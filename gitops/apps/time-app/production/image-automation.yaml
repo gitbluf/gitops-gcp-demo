@@ -26,6 +26,7 @@ metadata:
   name: time-app
   namespace: flux-system
 spec:
+  interval: 3m
   sourceRef: 
     kind: GitRepository
     name: flux-system

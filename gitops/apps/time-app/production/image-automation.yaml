@@ -22,16 +22,22 @@ spec:
       range: 1.x.x
 
 ---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
   name: time-app
   namespace: flux-system
 spec:
+  sourceRef: GitRepository
+     name: flux-system
+  update:
+    strategy: Setters
+    path: ./gitops/apps/time-app/production
   git:
     checkout:
-      ref:
-        branch: main
+      ref: main
     push:
+      
       branch: flux-image-updates/time-app
     commit:
       messageTemplate: |

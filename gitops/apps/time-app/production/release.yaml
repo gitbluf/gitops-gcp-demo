@@ -5,4 +5,4 @@ metadata:
   name: time-app
 spec:
   values:
-    image: fuck
+    image: registry/image:tag

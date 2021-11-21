@@ -1,4 +1,3 @@
-
 variable "gke_min_nodes" {
   default     = 1
   description = "Min number of gke nodes"
@@ -17,4 +16,9 @@ variable "project_id" {
 variable "region" {
   description = "region"
   default     = "europe-west4"
+}
+
+variable "labels" {
+  description = "Node group labels"
+  default     = {}
 }

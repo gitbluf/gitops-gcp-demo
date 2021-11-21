@@ -6,9 +6,8 @@ gcloud container clusters get-credentials $(terraform output -raw kubernetes_clu
 
 echo "======== BOOTSTRAPING FLUX ========="
 
-flux bootstrap git \
---url=ssh://git@github.com/gitbluf/gitops-gke-demo \
---branch=master \
+flux bootstrap github \
+--owner=gitbluf \
+--repository=gitops-gke-demo \
 --path=gitops/clusters/production \
---private-key-file=$HOME/.ssh/fluxinator
-
+--personal

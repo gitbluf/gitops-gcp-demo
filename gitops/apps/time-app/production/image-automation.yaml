@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   image: mpetrovic992/time-app
-  interval: 1m0s
+  interval: 1m
 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1

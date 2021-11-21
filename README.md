@@ -71,7 +71,7 @@ For GitOps I went with FluxV2.<br>
 
 Bootstrap command can found in terraform/scripts/bootstrap.sh <br>
 
-What time is it app repository was [FORKED](https://github.com/gitbluf/what-time-is-it) <br> and pipeline for image building was setup using GitHub Actions.
+What time is it app repository was [FORKED](https://github.com/gitbluf/what-time-is-it) <br> and [PIPELINE](https://github.com/gitbluf/what-time-is-it/blob/master/.github/workflows/main.yaml) for image building was setup using GitHub Actions.
 
 During the pipeline image is [pushed](https://hub.docker.com/r/mpetrovic992/time-app/tags) <br>
 
@@ -96,3 +96,6 @@ flux-system     imageupdateautomation/time-app  True    no updates made 2021-11-
 
 ```
 
+## APP
+URL: https://time-app.asg15.casual-trading.com
+SSL Report: https://www.ssllabs.com/ssltest/analyze.html?d=time-app.asg15.casual-trading.com&hideResults=on

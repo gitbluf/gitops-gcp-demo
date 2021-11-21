@@ -5,4 +5,16 @@ metadata:
   name: time-app
 spec:
   values:
-    image: registry/image:tag
+    image:
+   	 repository: mpetrovic992i/time-app # {"$imagepolicy": "flux-system:time-app:name"}
+   	 image: v1.0.2 # {"$imagepolicy": "flux-system:time-app:tag"}
+    ingress:
+      enabled: true
+      annotations:
+         kubernetes.io/ingress.class: nginx
+         cert-manager.io/cluster-issuer: "letsencrypt-staging"
+      hosts:
+       - host: time-app.asg15.casual-trading.com
+         paths:
+          - path: /
+

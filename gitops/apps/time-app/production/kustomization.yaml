@@ -5,6 +5,8 @@ commonLabels:
   app: time-app
 bases:
 - ../base
+resources:
+- image-automation.yaml
 patchesStrategicMerge:
 - release.yaml
 

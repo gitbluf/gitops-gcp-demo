@@ -10,4 +10,5 @@ flux bootstrap github \
 --owner=gitbluf \
 --repository=gitops-gke-demo \
 --path=gitops/clusters/production \
+--components-extra=image-reflector-controller,image-automation-controller \
 --personal

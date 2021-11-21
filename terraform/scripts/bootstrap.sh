@@ -11,4 +11,5 @@ flux bootstrap github \
 --repository=gitops-gke-demo \
 --path=gitops/clusters/production \
 --components-extra=image-reflector-controller,image-automation-controller \
+--read-write-key \
 --personal

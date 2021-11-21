@@ -3,11 +3,19 @@ kind: HelmRelease
 metadata:
   name: time-app
 spec:
+  upgrade:
+    timeout: 5m
+    remediation:
+      remediateLastFailure: true
+  install:
+    timeout: 5m
+  rollback:
+    timeout: 5m
   interval: 60m
   chart:
     spec:
-      kind: GitRepository
-      name: bux
-      namespace: flux-system
-
-
+      chart: ./chart
+      sourceRef:
+        kind: GitRepository
+        name: time-app
+        namespace: flux-system

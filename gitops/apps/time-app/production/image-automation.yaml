@@ -34,9 +34,9 @@ spec:
     path: ./gitops/apps/time-app/production
   git:
     checkout:
-      ref: main
+      ref: 
+        branch: main
     push:
-      
       branch: flux-image-updates/time-app
     commit:
       messageTemplate: |

@@ -97,5 +97,5 @@ flux-system     imageupdateautomation/time-app  True    no updates made 2021-11-
 ```
 
 ## APP
-URL: https://time-app.asg15.casual-trading.com
+URL: https://time-app.asg15.casual-trading.com <br>
 SSL Report: https://www.ssllabs.com/ssltest/analyze.html?d=time-app.asg15.casual-trading.com&hideResults=on

@@ -7,7 +7,7 @@ spec:
   values:
     image:
       repository: mpetrovic992/time-app # {"$imagepolicy": "flux-system:time-app:name"}
-      image: v1.0.4 # {"$imagepolicy": "flux-system:time-app:tag"}
+      image: v1.0.5 # {"$imagepolicy": "flux-system:time-app:tag"}
     ingress:
       enabled: true
       annotations:

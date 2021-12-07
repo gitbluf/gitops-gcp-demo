@@ -10,7 +10,7 @@ variable "gke_max_nodes" {
 
 variable "project_id" {
   description = "project id"
-  default     = "bux-assignment-mpetrovic"
+  default     = "project-id"
 }
 
 variable "region" {

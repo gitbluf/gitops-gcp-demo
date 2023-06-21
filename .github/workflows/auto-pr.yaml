@@ -1,21 +1,21 @@
-name: Staging Auto-PR
-on:
-  push:
-    branches:
-     - flux-image-updates/*
+# name: Staging Auto-PR
+# on:
+#   push:
+#     branches:
+#      - flux-image-updates/*
 
-jobs:
-  pull-request:
-    name: Open PR to main
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      name: checkout
+# jobs:
+#   pull-request:
+#     name: Open PR to main
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#       name: checkout
 
-    - uses: repo-sync/pull-request@v2
-      name: pull-request
-      with:
-        destination_branch: "main"
-        pr_title: "Pulling ${{ github.ref }} into main"
-        pr_body: "👑 *An automated PR*"
-        github_token: ${{ secrets.AUTO_PR_TOKEN }}
+#     - uses: repo-sync/pull-request@v2
+#       name: pull-request
+#       with:
+#         destination_branch: "main"
+#         pr_title: "Pulling ${{ github.ref }} into main"
+#         pr_body: "👑 *An automated PR*"
+#         github_token: ${{ secrets.AUTO_PR_TOKEN }}
